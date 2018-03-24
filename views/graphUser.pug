@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    head
+        script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+        script(src='/javascripts/drawGraph.js')
+        script.
+            var patient = "#{JSON.stringify(patient)}";
+
+    body
+        h3 Graph for patient - #{patient.id}
+        div.row
+            .col.s6
+                #curve_chart(style='width: 900px; height: 500px; margin-left: -100px')

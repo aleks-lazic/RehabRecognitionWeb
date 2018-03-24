@@ -6,6 +6,7 @@ block content
 
   ul
     each x in array
-      li= x.id
-      each y in x.moves
-        p -repetition : #{y.repetition} - #{y.from} to #{y.to} in #{y.timeSec} sec
+      li
+        a(href=`${x.id}`) #{x.id}
+        each y in x.moves
+          p -repetition : #{y.repetition} - #{y.from} to #{y.to} in #{y.timeSec} sec
