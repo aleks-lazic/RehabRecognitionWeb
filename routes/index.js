@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
     var moves = [];
     for(var i = 0 ; i<patients.length ; i++){
       for(var j = 0 ; j<patients[i].moves.length -1 ; j++){
-        moves.push({repetition: patients[i].moves[j + 1].repetition, from: patients[i].moves[j].place, to: patients[i].moves[j + 1].place, timeSec: (patients[i].moves[j + 1].time - patients[i].moves[j].time) / 1000});
+        moves.push({repetition: patients[i].moves[j].repetition, from: patients[i].moves[j].place, to: patients[i].moves[j + 1].place, timeSec: (patients[i].moves[j + 1].time - patients[i].moves[j].time) / 1000});
       }
       patients[i].moves = moves;
       moves = [];

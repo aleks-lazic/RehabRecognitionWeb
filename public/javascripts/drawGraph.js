@@ -11,14 +11,24 @@ function createPuissanceGraph(){
     var data = JSON.parse(patient.replace(/&quot;/g, '"'))
     // var chart = new google.visualization.DataTable();
 
-    var graph = google.visualization.arrayToDataTable([
-        ['Repetitions', 'Center -> Right', 'Right -> Center', 'Center -> Left', 'Left -> Center', 'Average'],
-        ['2004/05',  165,      938,         522,             998,           450],
-        ['2005/06',  135,      1120,        599,             1268,          288],
-        ['2006/07',  157,      1167,        587,             807,           397],
-        ['2007/08',  139,      1110,        615,             968,           215],
-        ['2008/09',  136,      691,         629,             1026,          366]
-     ]);
+    var graph = new google.visualization.DataTable();
+    graph.addColumn('number', 'Repetitions');
+    graph.addColumn('number', 'Center -> Left');
+    graph.addColumn('number', 'Left -> Center');
+    graph.addColumn('number', 'Center -> Right');
+    graph.addColumn('number', 'Right -> Center');
+    graph.addColumn('number', 'Average');
+    var row = [];
+    var cpt = 0;
+    for(var i = 0 ; i<data.moves.length ; i++){
+        if(row.length == 0){
+            row.push(data.moves[i].repetition);
+        }
+
+    }
+    graph.addRow([1,  14,      8,         3,             2,           5]);
+    graph.addRow([2,  3,      5,        3,             6,          4]);
+        
 
     //  var graph = new google.visualization.DataTable();
     //  graph.addColumn('number', 'Repetitions');
