@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  ul
+    each x in array
+      li= x.id
+      each y in x.moves
+        p -repetition : #{y.repetition} - #{y.from} to #{y.to} in #{y.timeSec} sec

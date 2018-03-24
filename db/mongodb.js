@@ -20,11 +20,13 @@ var connect = function(){
  * @param {string} dbName 
  */
 var findAllPatients = function(dbName){
-    connect().then((client) => {
-        var db = client.db(dbName);
-        db.collection('patient').find({}).toArray((err, result) => {
-            console.log(result);
-            client.close();
+    return new Promise((resolve, reject) => {
+        connect().then((client) => {
+            var db = client.db(dbName);
+            db.collection('patient').find({}).toArray((err, result) => {
+                resolve(result);
+                client.close();
+            })
         })
     })
 }
