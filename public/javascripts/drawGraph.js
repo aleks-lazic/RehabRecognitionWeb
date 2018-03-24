@@ -1,11 +1,9 @@
 google.charts.load('current', {'packages': ['corechart']});
-google.charts.setOnLoadCallback();
+google.charts.setOnLoadCallback(drawChart);
 
 
-window.onload = function drawChart() {
+function drawChart() {
     createPuissanceGraph();
-    // createProductionGraph();
-    // createPieGraph();
 }
 
 
